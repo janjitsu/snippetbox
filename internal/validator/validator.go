@@ -62,3 +62,14 @@ func PermittedInt(value int, permittedValues ...int) bool {
 
 	return false
 }
+
+/* generics version of permittedInt */
+func PermittedValue[T comparable](value T, permittedValues ...T) bool {
+	for i := range permittedValues {
+		if value == permittedValues[i] {
+			return true
+		}
+	}
+
+	return false
+}
