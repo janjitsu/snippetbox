@@ -1,14 +1,23 @@
+This is code for Let-go book snippetbox, I've copied and changed some stuff as
+a practice project
+
+
+setup db
+
+```
+docker-compose up -d
+```
+
 Running
 
 ```
 make run dev
 ```
 
-
-install mysql driver
+Testing
 
 ```
-go get github.com/go-sql-driver/mysql@v1
+make run test
 ```
 
-where did you stop?
+(see more)[https://lets-go.alexedwards.net/]
