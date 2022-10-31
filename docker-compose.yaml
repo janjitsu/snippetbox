@@ -15,5 +15,21 @@ services:
     volumes:
       - my-db:/var/lib/mysql
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+  test_db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'test_db'
+      MYSQL_USER: 'snippetbox'
+      MYSQL_PASSWORD: '123456'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3307:3306'
+    expose:
+      - '3307'
+    volumes:
+      - my-test-db:/var/lib/mysql
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
 volumes:
   my-db:
+  my-test-db:
